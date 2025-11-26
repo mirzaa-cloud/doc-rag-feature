@@ -2,7 +2,17 @@ import streamlit as st
 import requests
 import json
 
-backend_url = "http://localhost:8000"
+import streamlit as st
+
+# Access each secret (string, URL, key, or number)
+backend_url = st.secrets["BACKEND_URL"]
+supabase_url = st.secrets["SUPABASE_URL"]
+supabase_key = st.secrets["SUPABASE_KEY"]
+groq_api_key = st.secrets["GROQ_API_KEY"]
+qdrant_api_key = st.secrets["QDRANT_API_KEY"]
+max_file_size_mb = st.secrets["MAX_FILE_SIZE_MB"]
+
+#backend_url = "http://localhost:8000"
 
 if "page" not in st.session_state: st.session_state["page"] = "session"
 if "session_id" not in st.session_state: st.session_state["session_id"] = ""
